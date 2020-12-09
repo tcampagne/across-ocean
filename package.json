@@ -1,0 +1,22 @@
+{
+  "name": "across-ocean",
+  "version": "1.0.0",
+  "description": "Across the ocean on ThreeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tcampagne/across-ocean.git"
+  },
+  "author": "Thibault Campagne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tcampagne/across-ocean/issues"
+  },
+  "homepage": "https://github.com/tcampagne/across-ocean#readme",
+  "dependencies": {
+    "three": "^0.123.0"
+  }
+}
