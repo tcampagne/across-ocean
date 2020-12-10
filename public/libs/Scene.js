@@ -1,9 +1,9 @@
-import * as THREE from './../../node_modules/three/build/three.module.js';
-import Stats from './../../node_modules/three/examples/jsm/libs/stats.module.js';
-import { GUI } from './../../node_modules/three/examples/jsm/libs/dat.gui.module.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { Water } from 'three/examples/jsm/objects/Water';
-import { Sky } from 'three/examples/jsm/objects/Sky';
+import * as THREE from './../core/three/build/three.module.js';
+import Stats from '../core/three/examples/jsm/libs/stats.module.js';
+import { GUI } from '../core/three/examples/jsm/libs/dat.gui.module.js';
+import { OrbitControls } from '../core/three/examples/jsm/controls/OrbitControls.js';
+import { Water } from '../core/three/examples/jsm/objects/Water.js';
+import { Sky } from '../core/three/examples/jsm/objects/Sky.js';
 
 let container, stats;
 let camera, scene, renderer;
@@ -145,7 +145,7 @@ function onWindowResize() {
 
 export function animateScene() {
 
-    requestAnimationFrame( animateOcean );
+    requestAnimationFrame( animateScene );
     render();
     stats.update();
 
