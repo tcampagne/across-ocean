@@ -1,9 +1,9 @@
 import * as THREE from './../../node_modules/three/build/three.module.js';
 import Stats from './../../node_modules/three/examples/jsm/libs/stats.module.js';
 import { GUI } from './../../node_modules/three/examples/jsm/libs/dat.gui.module.js';
-import { OrbitControls } from './../../node_modules/three/examples/jsm/controls/OrbitControls.js';
-import { Water } from './../../node_modules/three/examples/jsm/objects/Water.js';
-import { Sky } from './../../node_modules/three/examples/jsm/objects/Sky.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { Water } from 'three/examples/jsm/objects/Water';
+import { Sky } from 'three/examples/jsm/objects/Sky';
 
 let container, stats;
 let camera, scene, renderer;
