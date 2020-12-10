@@ -5,9 +5,11 @@ import { OrbitControls } from '../core/three/examples/jsm/controls/OrbitControls
 import { Water } from '../core/three/examples/jsm/objects/Water.js';
 import { Sky } from '../core/three/examples/jsm/objects/Sky.js';
 
+import { GLTFLoader } from '../core/three/examples/jsm/loaders/GLTFLoader.js';
+
 let container, stats;
 let camera, scene, renderer;
-let controls, water, sun;
+let controls, water, sun, boat;
 
 export function initScene() {
 
@@ -130,6 +132,21 @@ export function initScene() {
 
     //
 
+    const loader = new GLTFLoader();
+
+    loader.load( './../models/wooden_boat/scene.gltf', function ( gltf ) {
+        boat = gltf;
+        boat.scene.scale.set(0.25,0.25,0.25);
+        scene.add( boat.scene );
+
+    }, undefined, function ( error ) {
+
+        console.error( error );
+
+    } );
+
+    //
+
     window.addEventListener( 'resize', onWindowResize, false );
 
 }
@@ -154,10 +171,11 @@ export function animateScene() {
 function render() {
 
     const time = performance.now() * 0.001;
-
-    // mesh.position.y = Math.sin( time ) * 20 + 5;
-    // mesh.rotation.x = time * 0.5;
-    // mesh.rotation.z = time * 0.51;
+    if (boat !== undefined) {
+        // boat.scene.position.y = Math.sin( time ) * 20 + 5;
+        // boat.scene.position.x = time * 10;
+        boat.scene.position.z = time * -10;
+    }
 
     water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
 
