@@ -137,6 +137,7 @@ export function initScene() {
     loader.load( './../models/wooden_boat/scene.gltf', function ( gltf ) {
         boat = gltf;
         boat.scene.scale.set(0.25,0.25,0.25);
+        boat.scene.rotateY(3.20);
         scene.add( boat.scene );
 
     }, undefined, function ( error ) {
